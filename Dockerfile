@@ -11,18 +11,21 @@ RUN apt update
 RUN apt -y upgrade
 
 #Installation Apache2,PHP et modules necessaire
-RUN apt install -y apache2
-
-RUN apt install -y \
-	wget \
-	php5 \
-	php5-mysql \
-	php5-ldap \
-	php5-xmlrpc \
-	php5-imap \
+RUN apt -y install \
+	nano \
+	apache2 \
+	php \
+	php-mysql \
+	php-ldap \
+	php-xmlrpc \
+	php-imap \
 	curl \
-	php5-curl\
-	php5-gd
+	php-curl \
+	php-gd \
+	php-mbstring \
+	php-xml \
+	php-apcu-bc \
+	wget
 
 RUN a2enmod rewrite && service apache2 restart
 
